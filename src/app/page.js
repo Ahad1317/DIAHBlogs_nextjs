@@ -6,13 +6,14 @@ import Format from '../../layout/format'
 import Trending from "../../components/trending"
 import Latest from "../../components/latest"
 import Popular from '../../components/popular'
-
+import Section from '../../components/section'
 export default function Home() {
   return (
     <Format>
       <Trending></Trending>
       <Latest></Latest>
       <Popular></Popular>
+      <Section></Section>
     </Format>     
   )
 }

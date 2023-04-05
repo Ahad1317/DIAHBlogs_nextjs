@@ -28,16 +28,14 @@ function Post(){
             <div className="images">
             <Link href="/">
                     <Image 
-                    src = "/images/a1.jpg" width={600} height={400}/>
+                    src = "/images/th3.jpeg" width={300} height={200}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col py-4">
             <div className="cat">
                 <Link href="/">
-                   <div className="flex">
                     <div className="text-orange-600 hover:text-orange-800">Solution Challenge is ON !! </div>
                     <div className="text-gray-800 hover:text-gray-600"> &nbsp;- April 4, 2023</div>
-                    </div>
                     </Link>
                     </div>
                     <div className="title">
