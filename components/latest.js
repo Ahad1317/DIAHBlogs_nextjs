@@ -26,7 +26,7 @@ function Post(){
             <div className="images">
             <Link href="/">
                     <Image 
-                    src = "/images/a1.jpg" className="rounded"  width={500} height={350}/>
+                    src = "/images/th4.jpeg" className="rounded"  width={350} height={150}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col py-4">
@@ -43,8 +43,8 @@ function Post(){
                             <div className="text-xl font-bold text-gray-800 hover:text-gray-600">Solution Challenge 2023: Use Google Technologies to Address UN Development Goals</div>
                         </Link>
                     </div>
-                    <p className="text-gray-500 py-3">Each year, the Google Developer Student Clubs Solution Challenge invites university students to develop solutions for real-world problems using one or more Google products or platforms. How could you use your favorite Google technologies to promote employment for all, economic growth, and climate action?
-                        Join us to build solutions for one or more of the United Nations 17 Sustainable Development Goals.
+                    <p className="text-gray-500 py-3 text-justify">Each year, the Google Developer Solution Challenge invites university students to develop solutions for real-world problems using Google products or platforms. How could you use your favorite Google technologies to promote employment for all, economic growth, and climate action?
+                        Join us to build solutions for one or more of the UN Sustainable Development Goals.
                         </p>
                         <Author></Author>
             </div>

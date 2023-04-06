@@ -5,10 +5,11 @@ import Author from "./child/author"
 import 'swiper/swiper.min.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
-
+import SwiperCore from 'swiper'
 
 export default function trending() {
 
+    SwiperCore.use([Autoplay])
   const bg = {
     background: "url('/images/banner6.jpg') no-repeat ",
     backgroundPosition:"right",
@@ -17,14 +18,12 @@ export default function trending() {
     return (  
     <section className="py-16" style ={bg}>
         <div className="container mx-auto md:px-10">
-            <h1 className="font-bold text-4xl pb-12 text-center ">Whats Trending ?</h1>
+            <h1 className="font-bold text-4xl pb-12 text-center">What's Trending ?</h1>
             <Swiper
-
-                centeredSlides={true}
+                slidesPerView={1}
                 loop={true}
                 autoplay ={{
                     delay:2000,
-                    disableOnInteraction: false,
                 }}
                 modules={[Autoplay]}
                 className="mySwiper"
@@ -52,7 +51,7 @@ function Slide(){
                 <div className="cat">
                 <Link href="/">
                     <div className="text-orange-600 hover:text-orange-800">Solution Challenge is ON !!</div>
-                    <div className="text-gray-800 hover:text-gray-600">- April 4, 2023</div>
+                    <div className="text-gray-800 hover:text-gray-600 pb-2">- April 4, 2023</div>
                     </Link>
                     </div>
                     <div className="title">
@@ -60,7 +59,7 @@ function Slide(){
                             <div className="text-3xl md:text-5xl font-bold text-gray-800 hover:text-gray-600">Solution Challenge 2023: Use Google Technologies to Address UN Development Goals</div>
                         </Link>
                     </div>
-                        <p className="text-gray-500 py-3">Each year, the Google Developer Student Clubs Solution Challenge invites university students to develop solutions for real-world problems using one or more Google products or platforms. How could you use your favorite Google technologies to promote employment for all, economic growth, and climate action?
+                        <p className="text-gray-500 py-3 text-justify">Each year, the Google Developer Student Clubs Solution Challenge invites university students to develop solutions for real-world problems using one or more Google products or platforms. How could you use your favorite Google technologies to promote employment for all, economic growth, and climate action?
                         Join us to build solutions for one or more of the United Nations 17 Sustainable Development Goals.
                         </p>
                         <Author></Author>
