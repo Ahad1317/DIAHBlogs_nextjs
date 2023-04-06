@@ -2,13 +2,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import Author from "./child/author" 
+import 'swiper/swiper.min.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Autoplay } from 'swiper'
-import 'swiper/css'
+import { Autoplay } from 'swiper'
+
 
 export default function trending() {
 
-    SwiperCore.use([Autoplay])
   const bg = {
     background: "url('/images/banner6.jpg') no-repeat ",
     backgroundPosition:"right",
@@ -20,12 +20,16 @@ export default function trending() {
             <h1 className="font-bold text-4xl pb-12 text-center ">Whats Trending ?</h1>
             <Swiper
 
-                slidesPerView={1}
+                centeredSlides={true}
                 loop={true}
                 autoplay ={{
-                    delay:2000
+                    delay:2000,
+                    disableOnInteraction: false,
                 }}
+                modules={[Autoplay]}
+                className="mySwiper"
                 >
+                <SwiperSlide><Slide/></SwiperSlide>
                 <SwiperSlide><Slide/></SwiperSlide>
 
       ...
