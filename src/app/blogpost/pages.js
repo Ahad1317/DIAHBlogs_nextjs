@@ -1,7 +1,7 @@
-import Format from "../../layout/format"
-import Author from "../../components/child/author"
+import Format from "../../../layout/format"
+import Author from "../../../components/child/author"
 import Image from "next/image"
-import Related from "../../components/child/related"
+import Related from "../../../components/child/related"
 export default function Page(){
     return(
         <Format>
