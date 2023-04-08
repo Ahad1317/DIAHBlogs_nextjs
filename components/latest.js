@@ -1,10 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import Author from "./child/author"
-import getPost from "../lib/helper"
+import fetcher from "../lib/fetcher"
 export default function latest() {
-
-    getPost(4).then(res=>console.log(res))
+     const {data,isLoading,isError} = fetcher('api/posts')
+    if(data) console.log(data)
   return (
     <section className="container mx-auto md:px-20 py-10">
         <h1 className="font-bold text-4xl py-12 text-center">Latest Posts..</h1>
