@@ -1,5 +1,5 @@
 //api endpoints for trending
-import data from "./data";
+import data from "../../../../pages/api/data";
 export default function handler(req,res) {
     const {Trending} = data;
     if(Trending) return res.status(200).json(Trending)
