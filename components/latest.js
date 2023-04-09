@@ -2,10 +2,12 @@ import Link from "next/link"
 import Image from "next/image"
 import Author from "./child/author"
 import fetcher from "../lib/fetcher"
+import Spinner from "./child/spinner"
+import Error from "./child/error"
 export default function latest() {
      const {data,isLoading,isError} = fetcher('api/posts/post')
-     if(isLoading)return<div>Loading..</div>
-    if(isError)return<div>Error</div>
+     if(isLoading)return<Spinner></Spinner>
+    if(isError)return<Error></Error>
   return (
     <section className="container mx-auto md:px-20 py-10">
         <h1 className="font-bold text-4xl py-12 text-center">Latest Posts..</h1>
