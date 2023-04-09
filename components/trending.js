@@ -44,7 +44,7 @@ function Slide(){
             <div className="image">
             <Link href="/">
                     <Image 
-                    src = "/images/a2.png" width={600} height={600} className="pr-6" style={{ width: "100%", height: "auto" }}/>
+                    src = "/images/a2.png" width={600} height={580} className="pr-6" style={{ width: "100%", height: "auto" }}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col">
