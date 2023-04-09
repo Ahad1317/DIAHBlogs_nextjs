@@ -6,8 +6,14 @@ import 'swiper/swiper.min.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper'
 import SwiperCore from 'swiper'
+import fetcher from "../lib/fetcher"
+import Spinner from "./child/spinner"
+import Error from "./child/error"
 
 export default function trending() {
+    const {data,isLoading,isError} = fetcher('api/trending')
+    if(isLoading)return<Spinner></Spinner>
+   if(isError)return<Error></Error>
 
     SwiperCore.use([Autoplay])
   const bg = {
@@ -28,8 +34,11 @@ export default function trending() {
                 modules={[Autoplay]}
                 className="mySwiper"
                 >
-                <SwiperSlide><Slide/></SwiperSlide>
-                <SwiperSlide><Slide/></SwiperSlide>
+               {
+                data.map((value,index)=>(
+                    <SwiperSlide key = {index}><Slide data = {value}></Slide></SwiperSlide>
+                ))
+               }
 
       ...
     </Swiper>
@@ -38,31 +47,32 @@ export default function trending() {
     </section>
   )
 }
-function Slide(){
+function Slide({data}){
+    const {id, title, category, img, published, description, author} =data
     return (
         <div className = "grid md:grid-cols-2">
             <div className="image">
             <Link href="/">
                     <Image 
-                    src = "/images/a2.png" width={600} height={580} className="pr-6" style={{ width: "100%", height: "auto" }}/>
+                    src = {img || "/"} width={600} height={580} className="pr-6" style={{ width: "100%", height: "auto" }}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col">
                 <div className="cat">
                 <Link href="/">
-                    <div className="text-orange-600 hover:text-orange-800">Solution Challenge is ON !!</div>
-                    <div className="text-gray-800 hover:text-gray-600 pb-2">- April 4, 2023</div>
+                    <div className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</div>
+                    <div className="text-gray-800 hover:text-gray-600 pb-2">- {published || "Unknown"}</div>
                     </Link>
                     </div>
                     <div className="title">
                         <Link href ="/">
-                            <div className="text-3xl md:text-5xl font-bold text-gray-800 hover:text-gray-600">Solution Challenge 2023: Use Google Technologies to Address UN Development Goals</div>
+                            <div className="text-3xl md:text-5xl font-bold text-gray-800 hover:text-gray-600">{title || "Unknown"}</div>
                         </Link>
                     </div>
-                        <p className="text-gray-500 py-3 text-justify">Each year, the Google Developer Student Clubs Solution Challenge invites university students to develop solutions for real-world problems using one or more Google products or platforms. How could you use your favorite Google technologies to promote employment for all, economic growth, and climate action?
-                        Join us to build solutions for one or more of the United Nations 17 Sustainable Development Goals.
+                        <p className="text-gray-500 py-3 text-justify">
+                            {description || "description"}
                         </p>
-                        <Author></Author>
+                        {author ? <Author></Author> : <></>}
             </div>
         </div>
     )
