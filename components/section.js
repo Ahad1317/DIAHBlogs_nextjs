@@ -38,20 +38,22 @@ function Post({data}){
     return(
         <div className="flex gap-5 ">
             <div className="image flex flex-col justify-start">
-            <Link href="/">
+            <Link href={`/posts/${id}`}>
                     <Image 
                     src = {img || "/"} className="rounded" width={300} height={250}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col ">
             <div className="cat">
-                <Link href="/">
+                <Link href={`/posts/${id}`}>
                     <div className="text-blue-800 hover:text-orange-800">{category || "No Category"} </div>
+                    </Link>
+                    <Link href={`/posts/${id}`}>
                     <div className="text-gray-800 hover:text-gray-600"> &nbsp;- {published || "No publishing"}</div>
                     </Link>
                     </div>
                     <div className="title">
-                        <Link href ="/">
+                        <Link href ={`/posts/${id}`}>
                             <div className="text-xl font-bold text-gray-800 hover:text-gray-600">{title || "No title"}</div>
                         </Link>
                     </div>

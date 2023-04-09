@@ -15,7 +15,12 @@ export default function popular() {
         <h1 className="font-bold text-4xl py-12 text-center">Most Popular..</h1>
 
             <Swiper
-            slidesPerView={2}>
+            breakpoints={{
+                640:{
+                    slidesPerView:2,
+                    spaceBetween: 30
+                }
+            }}>
                {
                 data.map((value,index)=>(
                     <SwiperSlide key = {index}><Post data={value}></Post></SwiperSlide>
@@ -31,20 +36,22 @@ function Post({data}){
     return(
         <div className="grid">
             <div className="images">
-            <Link href="/">
+            <Link href={`/posts/${id}`}>
                     <Image 
                     src = {img || ""} width={550} height={200}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col py-4">
             <div className="cat">
-                <Link href="/">
+                <Link href={`/posts/${id}`}>
                     <div className="text-orange-600 hover:text-orange-800 ">{category || "No category"}</div>
+                    </Link>
+                    <Link href={`/posts/${id}`}>
                     <div className="text-gray-800 hover:text-gray-600"> &nbsp;- {published || "No publishing"}</div>
                     </Link>
                     </div>
                     <div className="title">
-                        <Link href ="/">
+                        <Link href ={`/posts/${id}`}>
                             <div className="text-2xl md:text-4xl font-bold text-gray-800 hover:text-gray-600 py-3">{title || "No title"}</div>
                         </Link>
                     </div>

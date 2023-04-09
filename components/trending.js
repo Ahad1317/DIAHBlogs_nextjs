@@ -52,20 +52,21 @@ function Slide({data}){
     return (
         <div className = "grid md:grid-cols-2">
             <div className="image">
-            <Link href="/">
+            <Link href={`/posts/${id}`}>
                     <Image 
                     src = {img || "/"} width={600} height={580} className="pr-6" style={{ width: "100%", height: "auto" }}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col">
                 <div className="cat">
-                <Link href="/">
-                    <div className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</div>
+                <Link href={`/posts/${id}`}>
+                    <div className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</div></Link>
+                    <Link href={`/posts/${id}`}>
                     <div className="text-gray-800 hover:text-gray-600 pb-2">- {published || "Unknown"}</div>
                     </Link>
                     </div>
                     <div className="title">
-                        <Link href ="/">
+                        <Link href ={`/posts/${id}`}>
                             <div className="text-3xl md:text-5xl font-bold text-gray-800 hover:text-gray-600">{title || "Unknown"}</div>
                         </Link>
                     </div>

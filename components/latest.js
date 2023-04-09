@@ -28,22 +28,21 @@ function Post({data}){
     return(
         <div className="item">
             <div className="images">
-            <Link href={"/"}>
+            <Link href={`/posts/${id}`}>
                     <Image 
                     src = {img || "/"} className="rounded"  width={350} height={150}/>
                    </Link>
             </div>
             <div className="info flex justify-center flex-col py-4">
             <div className="cat">
-                <Link href="/">
-                   <div className="flex">
-                    <div className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</div>
+                <Link href={`/posts/${id}`}>
+                    <div className="text-orange-600 hover:text-orange-800">{category || "Unknown"}</div></Link>
+                    <Link href={`/posts/${id}`}>
                     <div className="text-gray-800 hover:text-gray-600"> &nbsp;- {published || "Unknown"}</div>
-                    </div>
                     </Link>
                     </div>
                     <div className="title">
-                        <Link href ="/">
+                        <Link href ={`/posts/${id}`}>
                             <div className="text-xl font-bold text-gray-800 hover:text-gray-600">{title || "Title"}</div>
                         </Link>
                     </div>
